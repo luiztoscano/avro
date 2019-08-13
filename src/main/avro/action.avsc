@@ -1,0 +1,8 @@
+{"namespace": "com.accenture.avro",
+ "type": "record",
+ "name": "UserAction",
+ "fields": [
+     {"name": "code",  "type": "int"},
+     {"name": "message", "type": "string"}
+ ]
+}

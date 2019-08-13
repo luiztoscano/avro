@@ -1,0 +1,9 @@
+{"namespace": "com.accenture.avro",
+ "type": "record",
+ "name": "Employee",
+ "fields": [
+     {"name": "id",  "type": "int"},
+     {"name": "name", "type": "string"},
+     {"name": "ssn", "type": ["int", "null"]}
+ ]
+}

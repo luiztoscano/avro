@@ -1,0 +1,144 @@
+{
+  "namespace": "com.accenture.avro",
+  "type": "record",
+  "name": "BoletoNaoSimulado",
+  "fields": [
+	{"name": "specversion", "type": "string" },
+    {"name": "type", "type": "string", "default" : "com.accenture.avro" },
+    {"name": "source", "type": "string", "default" : "urn:ep9:boleto" },
+    {"name": "id", "type": "string" },
+    {"name": "time", "type": "string" },
+    {"name": "eventversion", "type": "string" },
+    {"name": "transactionid", "type": "string" },
+    {"name": "datacontenttype", "type": "string", "default" : "application/avro" },
+    {"name": "data","type":
+        {
+            "name" : "BoletoCobranca",
+            "type": "record",
+            "fields": [
+                {"name": "codigo_canal_origem_boleto_cobranca", "type": ["string"]},
+                {"name": "numero_operador", "type": ["null","string"]},
+                {"name": "texto_dado_beneficiario_cobranca", "type":{ "type": "record",
+                    "name": "TextoDadoBeneficiarioCobranca",
+                    "fields": [
+                        {"name": "numero_agencia", "doc": "Numero da agencia do cliente da cobranca.", "type" : "string"},
+                        {"name": "numero_conta_corrente", "doc": "Numero da Conta-Corrente do cliente da cobranca.", "type" : "string"},
+                        {"name": "numero_digito_verificador", "doc": "Número do Digito Verificador do numero da conta", "type" : "string"},
+			            {"name": "nome_beneficiario_boleto_cobranca", "type": ["null", "string"]},
+                        {"name": "texto_dado_pessoa_cobranca", "type":{ "type": "record",
+                            "name": "TextoDadoPessoaCobranca",
+                                "fields": [
+                                    {"name": "nome_completo_pessoa", "type": "string"},
+                                    {"name": "nome_fantasia", "type": ["null","string"]},
+                                    {"name": "texto_dado_tipo_pessoa_cobranca", "type":{ "type": "record",
+                                        "name": "TextoDadoTipoPessoaCobranca",
+                                            "fields": [
+                                                {"name": "codigo_tipo_pessoa", "doc": "Symbols: F,J", "type": "string"},
+                                                {"name": "numero_cadastro_pessoa_fisica", "type": ["null","string"]},
+                                                {"name": "numero_cadastro_nacional_pessoa_juridica", "type": ["null","string"]}
+                                    ]}}
+                        ]}},
+                        {"name": "texto_dado_endereco_cobranca", "type":{ "type": "record",
+                                        "name": "TextoDadoEnderecoCobranca",
+                                        "fields": [
+                                            {"name": "nome_logradouro_endereco_cobranca", "type": "string"},
+                                            {"name": "numero_logradouro_endereco_cobranca", "type": ["null","string"]},
+                                            {"name": "nome_complemento_endereco_cobranca", "type": ["null","string"]},
+                                            {"name": "nome_bairro_endereco_cobranca", "type": "string"},
+                                            {"name": "nome_cidade_endereco_cobranca", "type": "string"},
+                                            {"name": "sigla_unidade_federacao_cobranca", "type": "string"},
+                                            {"name": "codigo_codigo_enderecamento_postal_cobranca", "type": "string"}
+                        ]}}
+                ]}},
+                {"name": "texto_dado_boleto_cobranca", "type":{ "type": "record",
+                    "name": "TextoDadoBoletoCobranca",
+                    "fields": [
+                        {"name": "codigo_forma_envio_cobranca", "doc":"Symbols: impressão, postagem, email", "type": ["null", "string"]},
+			            {"name": "codigo_tipo_emissao_boleto_cobranca", "doc":"Symbols: a vista, proposta, parcelado","type": "string"},
+			            {"name": "quantidade_parcela_boleto_cobranca_permitida", "type": ["null","int"]},
+                        {"name": "texto_dado_protesto_boleto_cobranca", "type":["null",{ "type": "record",
+                            "name": "TextoDadoProtestoBoletoCobranca",
+                            "fields": [
+                                {"name": "indicador_protesto_boleto_cobranca", "type": "boolean"},
+                                {"name": "quantidade_dia_protesto_boleto_cobranca", "type":["null","int"]}
+                        ]}]},
+                        {"name": "texto_dado_negativacao_pagador", "type":["null",{ "type": "record",
+                            "name": "TextoDadoNegativacaoPagador",
+                            "fields": [
+                                {"name": "indicador_servico_negativacao_pagador", "type": "boolean"},
+                                {"name": "quantidade_dia_negativacao", "type":["null","int"]}                        
+                        ]}]},
+                        {"name": "texto_dado_pagador", "type":{ "type": "record",
+                            "name": "TextoDadoPagador",
+                                "fields": [
+                                    {"name": "texto_dado_pessoa_cobranca", "type": "TextoDadoPessoaCobranca"},
+                                    {"name": "texto_dado_endereco_cobranca", "type": "TextoDadoEnderecoCobranca"},
+                                    {"name": "nome_endereco_email", "type": ["null","string"]}
+                        ]}},
+                        {"name": "texto_dado_sacador_avalista", "type":["null",{ "type": "record",
+                            "name": "TextoDadoSacadorAvalista",
+                            "fields": [
+                                {"name": "texto_dado_endereco_cobranca", "type": "TextoDadoEnderecoCobranca"},
+                                {"name": "texto_dado_pessoa_cobranca", "type": "TextoDadoPessoaCobranca"}
+                        ]}]},
+                        {"name": "codigo_carteira_cobranca", "type": ["null","string"]},
+                        {"name": "codigo_tipo_vencimento_boleto_cobranca","doc":"Symbols: 1,3", "type": "int"},
+                        {"name": "texto_dado_individual_boleto_cobranca", "type": { "type": "array", "items":{"type": "record",
+                            "name": "TextoDadoIndividualBoletoCobranca",
+                            "fields": [
+                                {"name": "data_vencimento_cobranca", "type": ["string"]},
+                                {"name": "valor_nominal_cobranca", "type": "string"},
+                                {"name": "numero_seu_numero_boleto_cobranca", "type": ["null","string"]}
+                        ]}}},
+                        {"name": "codigo_especie_titulo", "doc":"Symbols: 01,02,03,04,05,06,07,08,09,13,15,16,17,18,88,89,90,91,92,93,94,95,96,97,98,99", "type": "string"},
+                        {"name": "valor_abatimento_cobranca", "type": ["null","string"]},
+                        {"name": "texto_dado_juro_cobranca", "type":["null",{ "type": "record",
+                            "name": "TextoDadoJuroCobrancaAvalista",
+                            "fields": [
+                                {"name": "data_incidencia_juro_cobranca", "type": ["null","string"]},
+                                {"name": "codigo_tipo_juro_cobranca", "doc":"Symbols: 01,02,03,04,05,06,07,08,09,90", "type": "string"},
+                                {"name": "valor_juro_incidente_cobranca", "type": ["null","string"]},
+                                {"name": "percentual_juro_incidente_cobranca", "type": ["null","string"]}
+                        ]}]},
+                        {"name": "texto_dado_multa_cobranca", "type":["null",{ "type": "record",
+                            "name": "TextoDadoMultaCobranca",
+                            "fields": [
+                                {"name": "data_incidencia_multa_cobranca", "type":["null","string"]},
+                                {"name": "codigo_tipo_multa_cobranca", "doc":"Symbols: 01,02,03", "type": "string"},
+                                {"name": "valor_multa_incidente_cobranca", "type": ["null","string"]},
+                                {"name": "percentual_multa_incidente_cobranca", "type": ["null","string"]}
+                        ]}]},
+                        {"name": "texto_dado_desconto_cobranca", "type":["null",{ "type": "record",
+                            "name": "TextoDadoDescontoCobranca",
+                            "fields": [
+                                {"name": "codigo_tipo_desconto_cobranca", "doc":"Symbols: 00,01,02,03,04,05,06,90", "type": "string"},
+                                {"name": "texto_dado_detalhe_desconto_cobranca", "type": { "type": "array", "items":{"type": "record",
+                                    "name": "TextoDadoDetalheDescontoCobranca",
+                                    "fields": [
+                                        {"name": "data_limite_desconto_cobranca", "type": ["null","string"]},
+                                        {"name": "valor_desconto_concedido_cobranca", "type": ["null","string"]},
+                                        {"name": "percentual_desconto_concedido_cobranca", "type": ["null","string"]}
+                                ]}}}
+                        ]}]},
+                        {"name": "texto_mensagem_cobranca", "type": ["null", {"type": "array", "items": ["null","string"]}]},
+                        {"name": "indicador_desconto_expresso_contratado", "type": ["null","boolean"]},
+                        {"name": "texto_assunto_email", "type": ["null","string"]},
+                        {"name": "texto_mensagem_email", "type": ["null","string"]}
+                ]}},
+                {"name": "texto_dado_canal", "type":{ "type": "record",
+                    "name": "TextoDadoCanal",
+                    "fields": [
+                        {"name": "numero_identificacao_maquina", "type": "string"},
+                        {"name": "codigo_retorno_canal", "type": ["null", "string"]}
+                ]}},
+                {"name": "texto_dado_erro_cobranca", "type": [ "null",  { "type": "array", "items":{"type": "record",
+                            "name": "TextoDadoErroCobranca",
+                            "fields": [
+							{"name": "codigo_erro_cobranca", "type": ["null","string"]},
+							{"name": "descricao_erro_cobranca", "type": ["null","string"]}
+                ]}}]}
+            ]
+        }
+    }
+   ]
+}
