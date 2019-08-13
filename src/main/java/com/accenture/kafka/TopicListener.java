@@ -3,9 +3,18 @@ package com.accenture.kafka;
 import com.accenture.avro.BoletoNaoSimulado;
 import com.accenture.avro.Employee;
 import com.accenture.avro.User;
+import org.apache.avro.generic.GenericRecord;
+import org.apache.kafka.clients.consumer.Consumer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.listener.ConsumerAwareListenerErrorHandler;
+import org.springframework.kafka.listener.KafkaListenerErrorHandler;
+import org.springframework.kafka.listener.ListenerExecutionFailedException;
 import org.springframework.kafka.support.Acknowledgment;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -32,4 +41,5 @@ public class TopicListener {
 
         ack.acknowledge();
     }
+
 }

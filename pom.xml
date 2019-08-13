@@ -73,35 +73,6 @@
             </plugin>
 
             <plugin>
-                <groupId>org.toscano</groupId>
-                <artifactId>avro-pojo-maven-plugin</artifactId>
-                <version>1.0.0</version>
-
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>pojo</goal>
-                        </goals>
-                        <configuration>
-                            <sourceDirectory>${project.basedir}/src/main/avro</sourceDirectory>
-                            <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-                            <packageName>com.accenture.tst</packageName>
-                            <fieldAccessor>private</fieldAccessor>
-                            <includes>
-                                <include>**/*.avsc</include>
-                            </includes>
-                            <imports>
-                                <import>${project.basedir}/src/main/avro/action.avsc</import>
-                            </imports>
-                            <fieldsCamelCase>false</fieldsCamelCase>
-                            <methodsCamelCase>true</methodsCamelCase>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
                 <version>${avro.version}</version>
