@@ -2,38 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d10919e-4cb7-41c8-adab-72e5758406aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/avro.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/AvroDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/AvroSerializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/ExtendedAvroDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/ExtendedAvroSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/KafkaConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/KafkaProducerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/Registry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/TopicListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/kafka/TopicListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/BoletoCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/BoletoNaoSimulado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoBeneficiarioCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoBoletoCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoCanal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoDescontoCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoDetalheDescontoCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoEnderecoCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoErroCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoIndividualBoletoCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoJuroCobrancaAvalista.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoMultaCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoNegativacaoPagador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoPagador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoPessoaCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoProtestoBoletoCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoSacadorAvalista.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/TextoDadoTipoPessoaCobranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/tst/UserAction.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/kafka/KafkaConsumerConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="89" column="5" lean-forward="true" selection-start-line="73" selection-start-column="3" selection-end-line="89" selection-end-column="5" />
+            <state relative-caret-position="214">
+              <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -337,6 +307,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -637,8 +608,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/kafka/KafkaConsumerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="89" column="5" lean-forward="true" selection-start-line="73" selection-start-column="3" selection-end-line="89" selection-end-column="5" />
+        <state relative-caret-position="214">
+          <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -664,6 +635,7 @@
   </component>
   <component name="mavenExecuteGoalHistory">
     <option value="$PROJECT_DIR$" />
+    <option value="clean" />
     <option value="clean install" />
   </component>
 </project>

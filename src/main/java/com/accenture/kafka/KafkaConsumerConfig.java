@@ -81,6 +81,8 @@ public class KafkaConsumerConfig {
             @Override
             public void handle(Exception e, ConsumerRecord<?, ?> consumerRecord, Consumer<?, ?> consumer) {
                 System.out.println("Erro na deserializacao da mensagem:" + e.getMessage());
+                TopicPartition partition = new TopicPartition("topic.test", consumerRecord.partition());
+                consumer.seek(partition, consumerRecord.offset() + 1);
                 consumer.commitAsync();
 
             }
